@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java远程调用shell脚本 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java远程调用shell脚本">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/java远程调用shell脚本/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta property="og:image" content="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&e=1496584810&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=">
+<meta property="og:updated_time" content="2017-06-05T04:03:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java远程调用shell脚本">
+<meta name="twitter:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta name="twitter:image" content="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&e=1496584810&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-java远程调用shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/04/java远程调用shell脚本/" class="article-date">
+  <time datetime="2017-06-04T14:10:49.000Z" itemprop="datePublished">2017-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java远程调用shell脚本
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h3><p>java程序调用远程服务器的shell脚本来实现服务的起、停、重启。</p>
+<h3 id="前言（废话）："><a href="#前言（废话）：" class="headerlink" title="前言（废话）："></a>前言（废话）：</h3><p>由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。</p>
+<h3 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h3><h4 id="Step1-准备脚本"><a href="#Step1-准备脚本" class="headerlink" title="Step1.准备脚本"></a>Step1.准备脚本</h4><p>重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。<br>找到核心命令（获取pid）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ID=`ps -ef | grep <span class="string">"$NAME"</span> | grep -v <span class="string">"grep"</span> | grep -v kill  | awk <span class="string">'&#123;print $2&#125;'</span>`</div></pre></td></tr></table></figure>
+<p>于是初期博主调试后，写出了这样的shell</p>
+<blockquote>
+<p>如果你的虚机是root用户，kill命令会很强大，所以一定判断参数是否为空或数字，否则，分分钟把你的所有进程都kill，虚机瞬间爆炸😂，重头再来。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/sh</span></div><div class="line">NAME=$<span class="number">1</span></div><div class="line"><span class="comment">##检查参数，不能为空或纯数字,否则会kill几乎所有进程，直接死机。非root用户的话，应该不会死机，会报permission denied.</span></div><div class="line">a=`echo <span class="string">"$NAME"</span> | grep [^<span class="number">0</span><span class="number">-9</span>] &gt;/dev/null &amp;&amp; echo <span class="number">0</span> || echo <span class="number">1</span>` <span class="comment">#判断参数是否为数字,是数字则返回1，不是则返回0</span></div><div class="line"><span class="keyword">if</span> [ <span class="string">"$NAME"</span> == <span class="string">""</span> ]; then <span class="comment">#$NAME一定要加引号，不然$NAME为空的时候就成了if[ == "" ],会报错：unary operator</span></div><div class="line">echo <span class="string">"未输入要kill的进程名"</span></div><div class="line"><span class="keyword">elif</span> [ $a = <span class="number">1</span> ]; then</div><div class="line">echo <span class="string">"进程名不能为纯数字"</span></div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="comment">##重启进程</span></div><div class="line">echo <span class="string">"-----------------------"</span></div><div class="line">echo -e <span class="string">"pNmae\t=\t$NAME"</span></div><div class="line">ID=`ps -ef | grep <span class="string">"$NAME"</span> | grep -v <span class="string">"grep"</span> | grep -v <span class="string">"restart"</span>  | awk <span class="string">'&#123;print $2&#125;'</span>`</div><div class="line">echo -e <span class="string">"pid\t=\t$ID"</span></div><div class="line">echo <span class="string">"-----------------------"</span></div><div class="line"><span class="keyword">for</span> id <span class="keyword">in</span> $ID</div><div class="line">do</div><div class="line">kill <span class="number">-9</span> $id</div><div class="line">echo <span class="string">"killed $id"</span></div><div class="line">done</div><div class="line">echo <span class="string">"-----------------------"</span></div><div class="line">echo <span class="string">"restarted"</span> $NAME</div><div class="line">./$NAME <span class="number">1</span>&gt;/dev/null <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</div><div class="line"><span class="comment">#./$NAME</span></div><div class="line">fi</div></pre></td></tr></table></figure>
+<p>然后领导交于博主一份专业的shell脚本，瞬间把博主的三脚猫脚本秒成渣了。于是博主认真研读，添加注释，并稍作修改得到以下脚本。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line">#Filename:    server.sh.Chant</div><div class="line">#Author:        Chant</div><div class="line">#Email:        statuschuan@gmail.com</div><div class="line">#Date:        2017-06-03</div><div class="line">#Desc:</div><div class="line">#用途：该脚本用于停止、启动服务</div><div class="line">#使用说明：</div><div class="line">#启动该脚本时需要两个参数，参数均不能为空</div><div class="line">#第一个参数为：程序入口名称</div><div class="line">#第二个参数为：参数名称</div><div class="line">#注意事项：</div><div class="line">#远程调用时，请将脚本环境变量配置到/etc/bashrc或者用户目录下的.bashrc</div><div class="line"></div><div class="line">print_usage()</div><div class="line">&#123;</div><div class="line">  echo "Usage: $0 COMMAND"</div><div class="line">  echo "where COMMAND is one of:"</div><div class="line">  echo "  help                                         Help print this usage message"</div><div class="line">  echo "  start &lt;server_name&gt; &lt;server_param&gt;           Start"</div><div class="line">  echo "  stop  &lt;server_name&gt; &lt;server_param&gt;           Stop"</div><div class="line">  echo "  restart  &lt;server_name&gt; &lt;server_param&gt;        Restart"</div><div class="line">&#125;</div><div class="line"></div><div class="line">start()&#123;</div><div class="line">  #echo "start not suport now."</div><div class="line">  cmd=$@</div><div class="line">  $cmd 1&gt;/dev/null 2&gt;&amp;1 &amp; #这里一定要写1&gt;/dev/null 2&gt;&amp;1 不能只写&amp;,否则远程调用时，会等待cmd的返回结果(stdOut)，就么法愉快地玩耍了。</div><div class="line">&#125;</div><div class="line"></div><div class="line">stop()&#123;</div><div class="line">  #get arguments</div><div class="line">  SERVER_NAME=$1</div><div class="line">  SERVER_PARAM=$2</div><div class="line">  PROCESS_NAME="$1 $2"</div><div class="line">  #echo $PROCESS_NAME</div><div class="line">  if [ "$1" = "" ];</div><div class="line">  then</div><div class="line">    echo "第二个参数不能为空"</div><div class="line">    exit 0;</div><div class="line">  fi</div><div class="line">  if [ -z "$2" ];</div><div class="line">  then</div><div class="line">    echo "第三个参数不能为空"</div><div class="line">    exit 0;</div><div class="line">  fi</div><div class="line"></div><div class="line">  #get process's pids</div><div class="line">  pids=`ps -ef|grep "$PROCESS_NAME"|grep -v "grep"|awk '&#123;print $2&#125;'`</div><div class="line"></div><div class="line">  #Chant:使用以下命令可以过滤掉脚本本身的pid，就不用写后面的判断语句了。</div><div class="line">  #但是其实用$$获取当前脚本pid在逻辑上更严密，否则，万一你的脚本名和要操作的程序名有相同部分就会出问题，</div><div class="line">  #eg: 脚本名为：ser.sh 而程序名为：poser.sh,那么由于grep -v "$0" 就取不到其pid了</div><div class="line">  #pids=`ps -ef|grep "$PROCESS_NAME"|grep -v "grep"| grep -v "$0" |awk '&#123;print $2&#125;'`</div><div class="line">  # 为basename指定一个路径，basename命令会删掉所有的前缀包括最后一个slash（‘/’）字符，然后将字符串显示出来。</div><div class="line">  #pids=`ps -ef|grep "$PROCESS_NAME"|grep -v "grep"| grep -v "$(basename $0)" |awk '&#123;print $2&#125;'`</div><div class="line"></div><div class="line">  current_pid=$$</div><div class="line">  echo process pids is $pids.</div><div class="line"></div><div class="line">  #kill process</div><div class="line">  if [ -n "$pids" ]; #判断pids是否为空，引号必须加。"$pids" == ""等效</div><div class="line">  then</div><div class="line">    for pid in $pids</div><div class="line">    do</div><div class="line">      #current shell pid shoud not kill.</div><div class="line">      if [ $pid -ne $current_pid ];</div><div class="line">      then</div><div class="line">        #check $pid is exist or not</div><div class="line">        check=`ps -p $pid`</div><div class="line">        if [ $? -eq 0 ];</div><div class="line">        then</div><div class="line">          echo kill $pid start.</div><div class="line">          kill -9 $pid</div><div class="line">          #judge result</div><div class="line">          if [ $? -eq 0 ];</div><div class="line">          then</div><div class="line">            echo kill $pid success.</div><div class="line">          else</div><div class="line">            echo kill $pid fail.</div><div class="line">          fi</div><div class="line"></div><div class="line">        fi</div><div class="line">      fi</div><div class="line"></div><div class="line">    done</div><div class="line">  else</div><div class="line">    echo "$PROCESS_NAME does not exist."</div><div class="line">  fi</div><div class="line">&#125;</div><div class="line"></div><div class="line"># get command arguments</div><div class="line">COMMAND=$1</div><div class="line">shift</div><div class="line"># support help commands</div><div class="line">case $COMMAND in</div><div class="line">  --help|-help|-h|help)</div><div class="line">	print_usage</div><div class="line">	exit 0</div><div class="line">  ;;</div><div class="line">  "")</div><div class="line">	print_usage</div><div class="line">	exit 0</div><div class="line">  ;;</div><div class="line">  "start")</div><div class="line">	start $@</div><div class="line">	echo "$@ started"</div><div class="line">	exit 0</div><div class="line">  ;;</div><div class="line">	"stop")</div><div class="line">	stop $@</div><div class="line">	exit 0</div><div class="line">  ;;</div><div class="line">  "restart")</div><div class="line">	start and stop的参数需要一致才可以，如果不一致则需要调整参数传入方式</div><div class="line">	stop $@</div><div class="line">	eep 3</div><div class="line">	tart $@</div><div class="line">	echo "$@ restarted"</div><div class="line">    exit 0</div><div class="line">  ;;</div><div class="line">esac</div></pre></td></tr></table></figure>
+<h4 id="Step2-java程序远程调用shell"><a href="#Step2-java程序远程调用shell" class="headerlink" title="Step2.java程序远程调用shell"></a>Step2.java程序远程调用shell</h4><blockquote>
+<p>1.导入需要依赖的jar包。Java远程调用Shell脚本这个程序需要ganymed-ssh2-build210.jar包。里面还有example包，方便学习。为了调试方便，可以将\ganymed-ssh2-build210\src下的代码直接拷贝到我们的工程里，此源码的好处就是没有依赖很多其他的包，拷贝过来干干净净。<br>2.导入commons-io包，里面的IOUtils会经常使用。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;commons-io&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;commons-io&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.5&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;!-- https://mvnrepository.com/artifact/ch.ethz.ganymed/ganymed-ssh2 --&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;ch.ethz.ganymed&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;ganymed-ssh2&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;build210&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>3、编写RemoteShellExecutor工具类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> RemoteShell;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.nio.charset.Charset;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.commons.io.IOUtils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> ch.ethz.ssh2.ChannelCondition;</div><div class="line"><span class="keyword">import</span> ch.ethz.ssh2.Connection;</div><div class="line"><span class="keyword">import</span> ch.ethz.ssh2.Session;</div><div class="line"><span class="keyword">import</span> ch.ethz.ssh2.StreamGobbler;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Chant on 2017/5/27.</div><div class="line"> * 远程调用脚本重启服务</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoteShellExecutor</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Connection conn;</div><div class="line">    <span class="comment">/** 远程机器IP */</span></div><div class="line">    <span class="keyword">private</span> String ip;</div><div class="line">    <span class="comment">/** 用户名 */</span></div><div class="line">    <span class="keyword">private</span> String osUsername;</div><div class="line">    <span class="comment">/** 密码 */</span></div><div class="line">    <span class="keyword">private</span> String password;</div><div class="line">    <span class="keyword">private</span> String charset = Charset.defaultCharset().toString();</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TIME_OUT = <span class="number">1000</span> * <span class="number">5</span> * <span class="number">60</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 构造函数</div><div class="line">     * <span class="doctag">@param</span> ip</div><div class="line">     * <span class="doctag">@param</span> usr</div><div class="line">     * <span class="doctag">@param</span> pasword</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RemoteShellExecutor</span><span class="params">(String ip, String usr, String pasword)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.ip = ip;</div><div class="line">        <span class="keyword">this</span>.osUsername = usr;</div><div class="line">        <span class="keyword">this</span>.password = pasword;</div><div class="line"><span class="comment">//        System.out.println(charset);</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 登录</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     * <span class="doctag">@throws</span> IOException</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">login</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        conn = <span class="keyword">new</span> Connection(ip);</div><div class="line">        conn.connect();</div><div class="line">        <span class="keyword">return</span> conn.authenticateWithPassword(osUsername, password);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 执行脚本</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> cmds</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     * <span class="doctag">@throws</span> Exception</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">exec</span><span class="params">(String cmds)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        InputStream stdOut = <span class="keyword">null</span>;</div><div class="line">        InputStream stdErr = <span class="keyword">null</span>;</div><div class="line">        String outStr = <span class="string">""</span>;</div><div class="line">        String outErr = <span class="string">""</span>;</div><div class="line">        <span class="keyword">int</span> ret = -<span class="number">1</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">if</span> (login()) &#123;</div><div class="line">                <span class="comment">// Open a new &#123;@link Session&#125; on this connection</span></div><div class="line">                Session session = conn.openSession();</div><div class="line">                <span class="comment">// Execute a command on the remote machine.</span></div><div class="line">                session.execCommand(cmds);</div><div class="line"></div><div class="line">                stdOut = <span class="keyword">new</span> StreamGobbler(session.getStdout());</div><div class="line">                outStr = processStream(stdOut, charset);</div><div class="line"></div><div class="line">                stdErr = <span class="keyword">new</span> StreamGobbler(session.getStderr());</div><div class="line">                outErr = processStream(stdErr, charset);</div><div class="line"></div><div class="line">                session.waitForCondition(ChannelCondition.EXIT_STATUS, TIME_OUT);</div><div class="line"></div><div class="line">                System.out.println(<span class="string">"outStr="</span> +<span class="string">"\n"</span>+ outStr);</div><div class="line">                System.out.println(<span class="string">"outErr="</span> +<span class="string">"\n"</span>+ outErr);</div><div class="line"></div><div class="line">                ret = session.getExitStatus();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"登录远程机器失败"</span> + ip); <span class="comment">// 自定义异常类 实现略</span></div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</div><div class="line">                conn.close();</div><div class="line">            &#125;</div><div class="line">            IOUtils.closeQuietly(stdOut);</div><div class="line">            IOUtils.closeQuietly(stdErr);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@param</span> in</div><div class="line">     * <span class="doctag">@param</span> charset</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     * <span class="doctag">@throws</span> IOException</div><div class="line">     * <span class="doctag">@throws</span> UnsupportedEncodingException</div><div class="line">     */</div><div class="line"><span class="comment">//    private String processStream(InputStream in, String charset) throws Exception &#123;</span></div><div class="line"><span class="comment">//        byte[] buf = new byte[1024];</span></div><div class="line"><span class="comment">//        StringBuilder sb = new StringBuilder();</span></div><div class="line"><span class="comment">//        while (in.read(buf) != -1) &#123;</span></div><div class="line"><span class="comment">//            sb.append(new String(buf, charset));</span></div><div class="line"><span class="comment">//        &#125;</span></div><div class="line"><span class="comment">//        return sb.toString();</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">processStream</span><span class="params">(InputStream in, String charset)</span><span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">        BufferedReader bufr = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in,charset));</div><div class="line">        String line = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">while</span>((line = bufr.readLine()) != <span class="keyword">null</span>)&#123;</div><div class="line">            sb.append(line);</div><div class="line">            sb.append(<span class="string">"\n"</span>);<span class="comment">//？？换行符是依赖平台的</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sb.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>4、Java程序调用远程Shell</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">    RemoteShellExecutor(<span class="string">"10.10.10.100"</span>, <span class="string">"root"</span>, <span class="string">"123123"</span>);</div><div class="line">    String proName = <span class="string">"entranceMain.sh"</span>;</div><div class="line">    String para = <span class="string">"1"</span>;</div><div class="line">        System.out.println(executor.exec(<span class="string">"server.sh.Chant start "</span> + proName +<span class="string">" "</span>+ para));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将start换为restart，stop，测试结果如下，注意pid发生变化，说明重启成功。<br><img src="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&amp;e=1496584810&amp;token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/04/java远程调用shell脚本/" data-id="cj3jm3fd90001jpstn4d3nogx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/05/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/04/java远程调用shell脚本/">java远程调用shell脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
