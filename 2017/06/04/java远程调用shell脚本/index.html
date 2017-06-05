@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,shell," />
 
 
 
@@ -94,13 +94,14 @@
 
 
 <meta name="description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta name="keywords" content="java,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java远程调用shell脚本">
 <meta property="og:url" content="http://yoursite.com/2017/06/04/java远程调用shell脚本/index.html">
 <meta property="og:site_name" content="Chant">
 <meta property="og:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
 <meta property="og:image" content="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&e=1496584810&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=">
-<meta property="og:updated_time" content="2017-06-05T04:03:15.000Z">
+<meta property="og:updated_time" content="2017-06-05T07:12:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java远程调用shell脚本">
 <meta name="twitter:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
@@ -318,6 +319,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -393,6 +416,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/shell/" rel="tag"># shell</a>
+          
+        </div>
       
 
       
@@ -475,7 +506,7 @@
                alt="Chant" />
           <p class="site-author-name" itemprop="name">Chant</p>
            
-              <p class="site-description motion-element" itemprop="description">Chant's Personal Blog | NLP/自然语言处理 | Ml/机器学习 | Algorithm/算法</p>
+              <p class="site-description motion-element" itemprop="description">Take things as they are with a cavalier attitude./用漫不经心的态度过随遇而安的生活</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -490,7 +521,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
