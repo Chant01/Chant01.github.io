@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Chant</title>
+  <subtitle>Take things as they are with a cavalier attitude./用漫不经心的态度过随遇而安的生活</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-06-05T03:52:30.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Chant</name>
+    <email>statuschuan@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/06/05/hello-world/"/>
+    <id>http://yoursite.com/2017/06/05/hello-world/</id>
+    <published>2017-06-05T03:52:30.000Z</published>
+    <updated>2017-06-05T03:52:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java远程调用shell脚本</title>
+    <link href="http://yoursite.com/2017/06/04/java%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8shell%E8%84%9A%E6%9C%AC/"/>
+    <id>http://yoursite.com/2017/06/04/java远程调用shell脚本/</id>
+    <published>2017-06-04T14:10:49.000Z</published>
+    <updated>2017-06-05T07:17:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;目的：&quot;&gt;&lt;a href=&quot;#目的：&quot; class=&quot;headerlink&quot; title=&quot;目的：&quot;&gt;&lt;/a&gt;目的：&lt;/h3&gt;&lt;p&gt;java程序调用远程服务器的shell脚本来实现服务的起、停、重启。&lt;/p&gt;
+&lt;h3 id=&quot;前言（废话）：&quot;&gt;&lt;a hr
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+    
+  </entry>
+  
+</feed>
