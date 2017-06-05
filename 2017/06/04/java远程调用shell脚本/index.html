@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta name="description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。">
 <meta name="keywords" content="java,shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java远程调用shell脚本">
 <meta property="og:url" content="http://yoursite.com/2017/06/04/java远程调用shell脚本/index.html">
 <meta property="og:site_name" content="Chant">
-<meta property="og:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta property="og:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。">
 <meta property="og:image" content="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&e=1496584810&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=">
-<meta property="og:updated_time" content="2017-06-05T07:17:34.000Z">
+<meta property="og:updated_time" content="2017-06-05T09:50:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java远程调用shell脚本">
-<meta name="twitter:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。 前言（废话）：由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。 正文：Step1.准备脚本重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。找">
+<meta name="twitter:description" content="目的：java程序调用远程服务器的shell脚本来实现服务的起、停、重启。">
 <meta name="twitter:image" content="http://image.jiantuku.com/17-6-4/80160967.jpg?attname=file_1496584141329_3b57.png&e=1496584810&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:24Xu8-YbrqzYKvsT6uoA8NUefVk=">
 
 
@@ -421,6 +421,7 @@
       
         <hr>
 <h3 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h3><p>java程序调用远程服务器的shell脚本来实现服务的起、停、重启。</p>
+<a id="more"></a>
 <h3 id="前言（废话）："><a href="#前言（废话）：" class="headerlink" title="前言（废话）："></a>前言（废话）：</h3><p>由于知道我经验不足，领导给新同事分配任务时说：“这个java远程调用shell脚本重启服务，他两可能搞不出来，你研究下吧。”被人鄙视了一把，于是自己搭虚拟机，查资料，试一把，突然发现，好多事情其实没那么难嘛。</p>
 <h3 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h3><h4 id="Step1-准备脚本"><a href="#Step1-准备脚本" class="headerlink" title="Step1.准备脚本"></a>Step1.准备脚本</h4><p>重启的关键在于关闭，要关闭程序，那就要先找到程序pid，然后kill。<br>找到核心命令（获取pid）：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ID=`ps -ef | grep <span class="string">"$NAME"</span> | grep -v <span class="string">"grep"</span> | grep -v kill  | awk <span class="string">'&#123;print $2&#125;'</span>`</div></pre></td></tr></table></figure>
@@ -792,18 +793,9 @@
 
 
 
-  
-  
 
 
 
-  
-  
-
-
-
-  
-  
 
 
 
@@ -829,18 +821,6 @@
 
   
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
