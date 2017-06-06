@@ -1,0 +1,977 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Fredericka the Great:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="随笔,test," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chant" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式">
+<meta name="keywords" content="随笔,test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在hexo博客中插入图片，音乐，视屏，公式">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/index.html">
+<meta property="og:site_name" content="Chant">
+<meta property="og:description" content="摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式">
+<meta property="og:image" content="http://yoursite.com/media/14967219603047.jpg">
+<meta property="og:image" content="http://yoursite.com/media/WX20170606-095609@2x.png">
+<meta property="og:image" content="http://yoursite.com/media/2.png">
+<meta property="og:image" content="http://yoursite.com/media/image.png">
+<meta property="og:image" content="http://yoursite.com/media/3.png">
+<meta property="og:updated_time" content="2017-06-06T04:44:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在hexo博客中插入图片，音乐，视屏，公式">
+<meta name="twitter:description" content="摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式">
+<meta name="twitter:image" content="http://yoursite.com/media/14967219603047.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/"/>
+
+
+
+
+
+  <title>在hexo博客中插入图片，音乐，视屏，公式 | Chant</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8006843039519956000";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chant</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Take things as they are with a cavalier attitude./用漫不经心的态度过随遇而安的生活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'QyRncwx6yGnoWf2pnRoU','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chant">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chant">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在hexo博客中插入图片，音乐，视屏，公式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T00:45:09+08:00">
+                2017-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/test/" itemprop="url" rel="index">
+                    <span itemprop="name">test</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h3 id="摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式"><a href="#摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式" class="headerlink" title="摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式"></a>摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式</h3><a id="more"></a>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>关于插入图片，网上的图床（注册麻烦，使用麻烦，需要上传，网速不行咋办？类似Lightshot Screenshot，上传基本30秒，如果你要写一份需要详细截图的安装文档，那估计一天的时间都花在上传图片上了），hexo官方的方法（将图片放在source/image/下，这样在编辑器中并不能实时预览，而且你还需要记住图片的名字。）都令人觉得插入图片简直是个噩梦。<br>知道我遇到了MWeb，一个可以直接把图片拖入即可完成图片插入的Markdown编辑器，或者使用微信截图<code>Ctrl+command+a</code>保存(记得是点下载按钮，不是点那个小红勾)后，直接<code>Command+v</code>,图片就插入了。而且其低调简洁的界面，简单实用的快捷键，完美的诠释了什么叫优雅的写作方式。<br>当然如此美腻而又强大，必然不便宜的，官方价格￥98。不要桑心，他还有免费的lite版，两个版本的区别主要是以下几点：</p>
+<blockquote>
+<p>文档库文档限制在 10 个以内；（然鹅，写hexo一直都是用外部模式，压根不需要文档库）<br>外部模式可引入的文件夹限制在 1 个；（然鹅，一个文件下可以有无数个文件夹）<br>支持的发布服务只可增加 1 个；（然鹅，写hexo博客，不需要编辑器来帮我发布）</p>
+</blockquote>
+<p>当然，MWeb不只是拿来写hexo博客的，更多信息请戳<a href="http://zh.mweb.im/" target="_blank" rel="external">MWeb官网</a>以及<a href="http://zh.mweb.im/help.html" target="_blank" rel="external">帮助文档</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/media/14967219636093.jpg)</div></pre></td></tr></table></figure>
+<p><img src="/media/14967219603047.jpg" alt=""></p>
+<h3 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h3><h4 id="1-使用网易云音乐的外链播放器"><a href="#1-使用网易云音乐的外链播放器" class="headerlink" title="1.使用网易云音乐的外链播放器"></a>1.使用网易云音乐的外链播放器</h4><p>比如你右键某首歌，复制链接的到链接为<code>http://music.163.com/#/m/song?id=2919622</code>只需要其中的<code>id=2919622</code>就够了。<br><img src="/media/WX20170606-095609@2x.png" alt=""></p>
+<p>那么在文章中使用ifname标签如下，记得将其中的id改为你想要的音乐id。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=430 height=86 src="//music.163.com/outchain/player?type=2&amp;id=2919622&amp;auto=0&amp;height=66"&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="430" height="86" src="//music.163.com/outchain/player?type=2&id=2919622&auto=0&height=66"></iframe>
+
+<h4 id="2-使用-Hexo-插件插入音乐-音频"><a href="#2-使用-Hexo-插件插入音乐-音频" class="headerlink" title="2.使用 Hexo 插件插入音乐/音频"></a>2.使用 Hexo 插件插入音乐/音频</h4><p>hexo-tag-aplayer：<a href="https://github.com/grzhan/hexo-tag-aplayer" target="_blank" rel="external">https://github.com/grzhan/hexo-tag-aplayer</a><br>官方简介：<br>Embed APlayer(<a href="https://github.com/DIYgod/APlayer" target="_blank" rel="external">https://github.com/DIYgod/APlayer</a>) in Hexo posts/pages.很明显，除了posts，还可以在pages页面使用。</p>
+<p>Installation:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-tag-aplayer</div></pre></td></tr></table></figure>
+<p>Usage:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125;</div></pre></td></tr></table></figure></p>
+<p>参数说明及详细信息，请戳<a href="https://github.com/grzhan/hexo-tag-aplayer#usage" target="_blank" rel="external">github</a>，还有加入歌词和播放例表等强大功能等你探索。<br>Example:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% aplayer <span class="string">"她的睫毛"</span> <span class="string">"周杰伦"</span> <span class="string">"http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3"</span>  <span class="string">"http://home.ustc.edu.cn/~mmmwhy/jay.jpg"</span> <span class="string">"autoplay=false"</span> %&#125;</div></pre></td></tr></table></figure></p>
+<div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer0"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "她的睫毛",
+					author: "周杰伦",
+					url: "http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3",
+					pic: "http://home.ustc.edu.cn/~mmmwhy/jay.jpg",
+				}
+			});
+		</script>
+<p>使用唱吧录制并上传音频，用浏览器打开分享链接,右键显示网页源代码</p>
+<p><img src="/media/2.png" alt="2"><br>搜索<code>mp3</code>，找到你的音频链接。<br><img src="/media/image.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% aplayer  <span class="string">"museum"</span> <span class="string">"Chant"</span> <span class="string">"http://qiniuuwmp3.changba.com/900368852.mp3"</span> <span class="string">"http://aliimg.changba.com/cache/photo/735572112_640_640.jpg"</span> <span class="string">"autoplay=false"</span> %&#125;</div></pre></td></tr></table></figure>
+<div id="aplayer1" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer1"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "museum",
+					author: "Chant",
+					url: "http://qiniuuwmp3.changba.com/900368852.mp3",
+					pic: "http://aliimg.changba.com/cache/photo/735572112_640_640.jpg",
+				}
+			});
+		</script>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><h4 id="1使用标签插入视频"><a href="#1使用标签插入视频" class="headerlink" title="1使用标签插入视频"></a>1使用标签插入视频</h4><h5 id="1-1使用iframe标签插入视频"><a href="#1-1使用iframe标签插入视频" class="headerlink" title="1.1使用iframe标签插入视频"></a>1.1使用iframe标签插入视频</h5><p>右键视频，复制嵌入代码，直接将嵌入代码粘贴进你的markdown文章就OK啦。<br><img src="/media/3.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe width=&quot;854&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/xqf2DJgucsU&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure></p>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/xqf2DJgucsU" frameborder="0" allowfullscreen></iframe>
+
+<h5 id="1-2使用embed标签插入视屏"><a href="#1-2使用embed标签插入视屏" class="headerlink" title="1.2使用embed标签插入视屏"></a>1.2使用embed标签插入视屏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot; src=&quot;//static.hdslb.com/miniloader.swf&quot; flashvars=&quot;aid=8506694&amp;page=1&quot; pluginspage=&quot;//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&quot;&gt;&lt;/embed&gt;</div></pre></td></tr></table></figure>
+<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=8506694&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+
+<h4 id="2-使用hexo插件插入视频"><a href="#2-使用hexo插件插入视频" class="headerlink" title="2.使用hexo插件插入视频"></a>2.使用hexo插件插入视频</h4><p>hexo-tag-dplayer：<a href="https://github.com/NextMoe/hexo-tag-dplayer" target="_blank" rel="external">https://github.com/NextMoe/hexo-tag-dplayer</a><br>与aplayer类似，不过它是用来插入视频。</p>
+<p>Installation:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-tag-dplayer --save</div></pre></td></tr></table></figure>
+<p>Usage:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% dplayer key=value ... %&#125;</div></pre></td></tr></table></figure>
+<p>参数说明及详细信息，请戳<a href="https://github.com/NextMoe/hexo-tag-dplayer#usage" target="_blank" rel="external">github</a><br>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;  &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125;</div></pre></td></tr></table></figure>
+<div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"http://home.ustc.edu.cn/~mmmwhy/GEM.mp4","pic":"http://home.ustc.edu.cn/~mmmwhy/GEM.jpg"}});</script>
+<p>Example:<br>此方法youtube视频的引用还在探索中。</p>
+<div id="dplayer1" class="dplayer" style="margin-bottom: 20px; width:854; height:480;"></div><script>var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"video":{"url":"https://www.youtube.com/embed/xqf2DJgucsU"}});</script>
+<p>以下是官方示例，点击设置按钮还有弹幕、速度、洗脑循环等选项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% dplayer <span class="string">"url=http://devtest.qiniudn.com/若能绽放光芒.mp4"</span> <span class="string">"addition=https://dplayer.daoapp.io/bilibili?aid=4157142"</span> <span class="string">"api=http://dplayer.daoapp.io"</span> <span class="string">"pic=http://devtest.qiniudn.com/若能绽放光芒.png"</span> <span class="string">"id=9E2E3368B56CDBB4"</span> <span class="string">"loop=yes"</span> <span class="string">"theme=#FADFA3"</span> <span class="string">"autoplay=false"</span> <span class="string">"token=tokendemo"</span> %&#125;</div></pre></td></tr></table></figure>
+<div id="dplayer2" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer2 = new DPlayer({"element":document.getElementById("dplayer2"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"http://devtest.qiniudn.com/若能绽放光芒.mp4","pic":"http://devtest.qiniudn.com/若能绽放光芒.png"},"danmaku":{"api":"http://dplayer.daoapp.io","id":"9E2E3368B56CDBB4","token":"tokendemo","addition":["https://dplayer.daoapp.io/bilibili?aid=4157142"]}});</script>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>1.<a href="http://feiyang.li/2017/02/24/Hexo-music-video/" target="_blank" rel="external">Hexo博客中插入音乐/视频</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+            <a href="/tags/test/" rel="tag"># test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/05/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Chant" />
+          <p class="site-author-name" itemprop="name">Chant</p>
+           
+              <p class="site-description motion-element" itemprop="description">Take things as they are with a cavalier attitude./用漫不经心的态度过随遇而安的生活</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Chant00" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100014951437344" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/63254896/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-fa-dot-circle-o"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2989429165/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://isujin.com/" title="素锦" target="_blank">素锦</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式"><span class="nav-number">1.</span> <span class="nav-text">摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">2.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐"><span class="nav-number">3.</span> <span class="nav-text">音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用网易云音乐的外链播放器"><span class="nav-number">3.1.</span> <span class="nav-text">1.使用网易云音乐的外链播放器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用-Hexo-插件插入音乐-音频"><span class="nav-number">3.2.</span> <span class="nav-text">2.使用 Hexo 插件插入音乐/音频</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频"><span class="nav-number">4.</span> <span class="nav-text">视频</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1使用标签插入视频"><span class="nav-number">4.1.</span> <span class="nav-text">1使用标签插入视频</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1使用iframe标签插入视频"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.1使用iframe标签插入视频</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2使用embed标签插入视屏"><span class="nav-number">4.1.2.</span> <span class="nav-text">1.2使用embed标签插入视屏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用hexo插件插入视频"><span class="nav-number">4.2.</span> <span class="nav-text">2.使用hexo插件插入视频</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献："><span class="nav-number">5.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chant</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chant-1.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/';
+          this.page.identifier = '2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/';
+          this.page.title = '在hexo博客中插入图片，音乐，视屏，公式';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chant-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

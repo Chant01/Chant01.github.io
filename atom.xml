@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-05T09:49:32.000Z</updated>
+  <updated>2017-06-06T04:44:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在hexo博客中插入图片，音乐，视屏，公式</title>
+    <link href="http://yoursite.com/2017/06/06/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E5%B1%8F%EF%BC%8C%E5%85%AC%E5%BC%8F/"/>
+    <id>http://yoursite.com/2017/06/06/在hexo博客中插入图片，音乐，视屏，公式/</id>
+    <published>2017-06-05T16:45:09.000Z</published>
+    <updated>2017-06-06T04:44:11.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式&quot;&gt;&lt;a href=&quot;#摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式&quot; class=&quot;headerlink&quot; title=&quot;摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式&quot;&gt;&lt;/a&gt;摘要：如何简洁优雅地在hexo博客中插入图片，音乐，视屏，公式&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="test" scheme="http://yoursite.com/categories/test/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
